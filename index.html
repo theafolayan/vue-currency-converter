@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
+
+<link rel="stylesheet" href="style.css">
+<title>Vue Currency Converter</title>
+</head>
+<body>
+    <div class="container">
+
+        <h3 class="container text-center"> Vue Currency Converter</h3>
+
+
+                <div class="container">
+                                    <div class="row">
+                                            <div class=" col-sm form-group">
+                                                <label for="exampleFormControlSelect1">From: </label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                <option>USD</option>
+                                                <option>EUR</option>
+                                                <option>NGN</option>
+                                                <option>YEN</option>
+                                                <option>BTC</option>
+                                                </select>
+                                            </div>
+                                            <div class=" col-sm form-group">
+                                                <label for="exampleFormControlSelect1">To: </label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                <option>USD</option>
+                                                <option>EUR</option>
+                                                <option>NGN</option>
+                                                <option>YEN</option>
+                                                <option>BTC</option>
+                                                </select>
+                                            </div>
+
+
+                                    </div>
+                            
+                </div>
+                <button class="align-self-center btn btn-primary"> Convert</button> 
+                <br>
+
+                <h2 class="text-center text-muted"> Result: 0 </h2>
+</div>      
+                
+            
+      
+   
+    
+
+<script src="./src/vue.js"></script>
+<script src="./src/axios.js"></script>
+</body>
+</html>
