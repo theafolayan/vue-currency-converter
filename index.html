@@ -46,7 +46,10 @@
                 <input v-model='amount' class="form-control" id="exampleFormControlSelect1">
             
             </div>
-    <button :disabled ='disabled' @click ='convertCurrency()' class="align-self-center btn btn-primary" > Convert</button> 
+    <button :disabled ='disabled' @click ='convertCurrency()' class="align-self-center btn btn-primary" > {{ loading ? 'converting...' : 'Convert'}}
+
+
+    </button> 
     </div>
         
 </div> 
