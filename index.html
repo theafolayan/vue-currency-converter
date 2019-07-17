@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+      
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,34 +21,36 @@
 <div class="row">
     <div class=" col-sm form-group">
         <label for="exampleFormControlSelect1">From: </label>
-        <select class="form-control" id="exampleFormControlSelect1">
-        <option>USD</option>
-        <option>EUR</option>
-        <option>NGN</option>
-        <option>YEN</option>
-        <option>BTC</option>
+        <select v-model='from' class="form-control" id="exampleFormControlSelect1">
+        <option :value ='currency.id' v-for ='currency in formattedCurrencies'>
+            {{ currency.currencyName}}
+        </option>
+        
         </select>
     </div>
     <div class=" col-sm form-group">
         <label for="exampleFormControlSelect1">To: </label>
-        <select class="form-control" id="exampleFormControlSelect1">
-        <option>USD</option>
-        <option>EUR</option>
-        <option>NGN</option>
-        <option>YEN</option>
-        <option>BTC</option>
+        <select v-model='to' class="form-control" id="exampleFormControlSelect1">
+        <option :value ='currency.id' v-for ='currency in formattedCurrencies'> {{ currency.currencyName}} </option>
+       
         </select>
     </div>
 
 
 </div>
+    
 
-<div class="form-group"> 
-    <input type="number" class = form-group name="" id="">
-</div>             
+<div class="row">
+        <div class=" col-sm form-group">
+                <label for="exampleFormControlSelect1">Amount: </label>
+                <input v-model='amount' class="form-control" id="exampleFormControlSelect1">
+            
+            </div>
+    <button class="align-self-center btn btn-primary"> Convert</button> 
+    </div>
+        
 </div>
-                <button class="align-self-center btn btn-primary"> Convert</button> 
-                <br>
+                
 
                 <h2 class="text-center text-muted"> Result: 0 </h2>
 </div>      
