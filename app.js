@@ -3,8 +3,8 @@ new Vue({
     data: {
         currencies: {},
         amount: 0,
-        from: '',
-        to: '',
+        from: 'USD',
+        to: 'EUR',
         result: 0
     },
     mounted(){
@@ -21,7 +21,7 @@ new Vue({
     return (Number(this.amount) * this.result).toFixed(3);
 },
 disabled(){
-    return this.amount === 0 || !this.amount;
+    return this.amount === 0 || !this.amount ||this.loading;
 }
     },
     methods: {
@@ -43,9 +43,11 @@ const theurl = 'https://free.currconv.com/api/v7/currencies?apiKey=58ab21ec84d5a
             },
             convertCurrency(){
                 const key = `${this.from}_${this.to}`;
+                this.loading = true;
                 var adress = `https://free.currconv.com/api/v7/convert?q=${key}&apiKey=58ab21ec84d5a9453b2f`;
                 axios.get(adress).then((response) => {
                     console.log(response.data.results[key].val);
+                    this.loading = false;
                     this.result = response.data.results[key].val;
                 })
             },
