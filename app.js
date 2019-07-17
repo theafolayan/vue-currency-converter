@@ -21,7 +21,7 @@ new Vue({
     return (Number(this.amount) * this.result).toFixed(3);
 },
 disabled(){
-    return this.amount === 0;
+    return this.amount === 0 || !this.amount;
 }
     },
     methods: {
